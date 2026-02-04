@@ -1,0 +1,260 @@
+<div class="container my-5">
+
+  <!-- HEADER -->
+  <div class="mb-5 text-center">
+    <p class="text-muted fs-5">
+      AI-inspired Decision Intelligence for Travel
+    </p>
+  </div>
+
+  <!-- DECISION FATIGUE -->
+  <div class="alert alert-warning border-start border-4 shadow-sm">
+    <strong>Decision Fatigue:</strong> <%= fatigue.level %><br/>
+    <small><%= fatigue.message %></small>
+  </div>
+
+  <!-- INTENT -->
+  <div class="card mb-4 shadow-sm">
+    <div class="card-body">
+      <h5 class="card-title mb-3">🧠 Understood Your Intent</h5>
+
+      <div class="mb-2">
+        <% (intent.keywords || []).forEach(k => { %>
+          <span class="badge rounded-pill bg-primary me-1"><%= k %></span>
+        <% }) %>
+      </div>
+
+      <ul class="list-group list-group-flush mt-3">
+        <li class="list-group-item">
+          Trip Type: <strong><%= intent.tripType || "—" %></strong>
+        </li>
+        <li class="list-group-item">
+          Duration: <strong><%= intent.duration || "—" %> days</strong>
+        </li>
+        <li class="list-group-item">
+          Budget: <strong><%= intent.budget || "—" %></strong>
+        </li>
+        <li class="list-group-item">
+          From: <strong><%= intent.from || "—" %></strong>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WHY -->
+  <div class="card mb-3 shadow-sm">
+    <div class="card-body">
+      <h5>Why these results?</h5>
+      <p class="text-muted mb-0">
+        Ranked using your preferences for
+        <strong><%= intent.tripType %></strong>,
+        <strong><%= intent.budget %></strong> budget,
+        and <strong><%= intent.duration %></strong> days,
+        while minimizing decision overload.
+      </p>
+    </div>
+  </div>
+
+  <!-- AI INSIGHT -->
+  <div class="card mb-4 shadow-sm bg-light">
+    <div class="ai-box card-body">
+      <h5>🤖 TravelMind Insight</h5>
+      <p class="mb-0"><%= aiInsight %></p>
+    </div>
+  </div>
+
+  <!-- WHAT IF -->
+  <div class="card whatif-card mb-5 p-4 text-white shadow">
+    <h5 class="mb-2">🔁 Explore Alternate Scenarios</h5>
+    <p class="text-light">
+      Instantly simulate how small changes affect your trip ranking
+    </p>
+
+    <button class="btn btn-outline-light me-2" onclick="whatIf('lowBudget')">
+      Reduce Budget
+    </button>
+
+    <button class="btn btn-outline-light" onclick="whatIf('addDay')">
+      Add 1 Day
+    </button>
+  </div>
+
+  <style>
+  /* ===== TRIP CARD IMAGE FIX ===== */
+  .trip-image {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 14px 14px 0 0;
+  }
+
+  /* ===== CARD ===== */
+  .trip-card {
+    background: linear-gradient(180deg, #1a1f2e, #141826);
+    border-radius: 16px;
+    color: #eaeaf0;
+  }
+
+  /* ===== COMPARE BADGE ===== */
+  .compare-pill {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #000;
+    border-radius: 20px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    z-index: 10;
+  }
+
+  .compare-pill input {
+    cursor: pointer;
+  }
+
+  /* ===== BEST MATCH ===== */
+  .best-match {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #22c55e;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 14px;
+    font-size: 12px;
+    font-weight: 700;
+    z-index: 10;
+  }
+
+  /* ===== COMPARE BUTTON ===== */
+  .compare-btn {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(37,99,235,0.4);
+  }
+
+  .compare-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+</style>
+
+<div class="container my-5">
+
+  <!-- HEADER -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="fw-bold text-white">Recommended Trips</h3>
+
+    <button
+      id="compareBtn"
+      class="compare-btn"
+      onclick="compareTrips()"
+      disabled
+    >
+      🔍 Compare Selected
+    </button>
+  </div>
+
+  <div class="row">
+    <% trips.forEach((trip, index) => { %>
+      <div class="col-md-4 mb-4">
+
+        <div class="card trip-card h-100 position-relative overflow-hidden">
+
+          <!-- Compare -->
+          <div class="compare-pill">
+            <input
+              type="checkbox"
+              class="compare-checkbox"
+              value="<%= trip.id %>"
+              onchange="toggleCompare()"
+            />
+            Compare
+          </div>
+
+          <!-- Best Match -->
+          <% if (index === 0) { %>
+            <div class="best-match">Best Match</div>
+          <% } %>
+
+          <!-- Image -->
+          <img
+            src="<%= trip.image %>"
+            alt="<%= trip.name %>"
+            class="trip-image"
+          />
+
+          <div class="card-body d-flex flex-column">
+
+            <h5 class="fw-bold"><%= trip.name %></h5>
+            <p class="text-muted mb-1"><%= trip.location %></p>
+
+            <p class="mb-2">
+              ⭐ <strong><%= trip.rating %></strong>
+              <span class="text-muted">(<%= trip.reviewsCount %>)</span>
+            </p>
+
+            <p class="fs-5 fw-bold mb-2">
+              ₹ <%= trip.price %> / night
+            </p>
+
+            <p class="small text-muted">
+              <%= trip.description %>
+            </p>
+
+            <p class="mt-2 mb-1">
+              <strong>Match Confidence:</strong> <%= trip.matchScore %>%
+            </p>
+
+            <div class="progress mb-3">
+              <div
+                class="progress-bar bg-success"
+                style="width:<%= trip.matchScore %>%">
+              </div>
+            </div>
+
+            <ul class="list-unstyled small mt-auto">
+              <li>💰 Cost: <%= trip.tradeOffs.cost %></li>
+              <li>⭐ Comfort: <%= trip.tradeOffs.comfort %></li>
+              <li>⏱ Duration Fit: <%= trip.tradeOffs.durationFit %></li>
+            </ul>
+
+            <a
+              href="/trip/<%= trip.id %>"
+              class="btn btn-outline-primary mt-3"
+            >
+              View Details
+            </a>
+
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+<script>
+  function toggleCompare() {
+    const checked = document.querySelectorAll(".compare-checkbox:checked");
+    document.getElementById("compareBtn").disabled = checked.length !== 2;
+  }
+
+  function compareTrips() {
+    const selected = Array.from(
+      document.querySelectorAll(".compare-checkbox:checked")
+    ).map(cb => cb.value);
+
+    if (selected.length !== 2) return;
+
+    window.location.href = `/compare?ids=${selected.join(",")}`;
+  }
+</script>

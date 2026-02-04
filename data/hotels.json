@@ -1,0 +1,203 @@
+[
+  {
+    "id": 1,
+    "name": "Seaside Retreat Goa",
+    "location": "Goa, India",
+    "lat": 15.2993,
+    "lng": 74.124,
+    "stars": 4.5,
+    "rating": 4.6,
+    "reviewsCount": 1280,
+    "price": 6200,
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+    "tags": ["beach", "luxury", "nightlife"],
+    "whyThisHotel": "Best balance of luxury, nightlife access, and beachfront views.",
+    "description": "Premium beachfront stay with sea-facing rooms and nightlife access.",
+    "amenities": ["Free WiFi", "Pool", "Beach Access", "Breakfast Included", "Bar"],
+    "details": {
+      "idealFor": ["Couples", "Party Lovers"],
+      "nearby": ["Baga Beach", "Tito’s Lane", "Water Sports Hub"]
+    }
+  },
+  {
+    "id": 2,
+    "name": "Palm Cove Resort",
+    "location": "Goa, India",
+    "lat": 15.2993,
+    "lng": 74.124,
+    "stars": 4.2,
+    "rating": 4.4,
+    "reviewsCount": 940,
+    "price": 5400,
+    "image": "https://images.unsplash.com/photo-1501117716987-c8e2a2b2106d",
+    "tags": ["beach", "mid"],
+    "whyThisHotel": "Affordable beach resort with strong reviews and private access.",
+    "description": "Comfortable resort with pool and private beach access.",
+    "amenities": ["Free WiFi", "Pool", "Beach Access", "Breakfast Included"],
+    "details": {
+      "idealFor": ["Families", "Relaxation"],
+      "nearby": ["Candolim Beach", "Local Cafes"]
+    }
+  },
+  {
+    "id": 3,
+    "name": "Azure Bay Stay",
+    "location": "Goa, India",
+    "lat": 15.2993,
+    "lng": 74.124,
+    "stars": 3.9,
+    "rating": 4.1,
+    "reviewsCount": 610,
+    "price": 4200,
+    "image": "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a",
+    "tags": ["beach", "budget"],
+    "whyThisHotel": "Top-rated budget option near the beach.",
+    "description": "Affordable beachside stay ideal for budget travelers.",
+    "amenities": ["Free WiFi", "Pool"],
+    "details": {
+      "idealFor": ["Backpackers", "Solo Travelers"],
+      "nearby": ["Local Markets", "Beach Shacks"]
+    }
+  },
+  {
+    "id": 4,
+    "name": "Hilltop Escape Manali",
+    "location": "Manali, India",
+    "lat": 32.2396,
+    "lng": 77.1887,
+    "stars": 4.6,
+    "rating": 4.7,
+    "reviewsCount": 880,
+    "price": 5800,
+    "image": "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+    "tags": ["mountain", "luxury", "nature"],
+    "whyThisHotel": "Panoramic Himalayan views with premium comfort.",
+    "description": "Luxury mountain resort with panoramic Himalayan views.",
+    "amenities": ["Free WiFi", "Heater", "Mountain View", "Breakfast Included"],
+    "details": {
+      "idealFor": ["Couples", "Nature Lovers"],
+      "nearby": ["Solang Valley", "Hadimba Temple"]
+    }
+  },
+  {
+    "id": 5,
+    "name": "Royal Haveli Stay",
+    "location": "Jaipur, India",
+    "lat": 26.9124,
+    "lng": 75.7873,
+    "stars": 4.6,
+    "rating": 4.7,
+    "reviewsCount": 980,
+    "price": 6100,
+    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    "tags": ["heritage", "luxury", "culture"],
+    "whyThisHotel": "Authentic royal experience inside a restored haveli.",
+    "description": "Heritage palace stay with traditional Rajasthani hospitality.",
+    "amenities": ["Free WiFi", "Pool", "Cultural Shows", "Breakfast Included"],
+    "details": {
+      "idealFor": ["Heritage Lovers", "International Tourists"],
+      "nearby": ["Hawa Mahal", "City Palace", "Local Bazaars"]
+    }
+  },
+  {
+    "id": 6,
+    "name": "Backwater Serenity Villa",
+    "location": "Alleppey, Kerala",
+    "lat": 9.4981,
+    "lng": 76.3388,
+    "stars": 4.5,
+    "rating": 4.6,
+    "reviewsCount": 870,
+    "price": 6400,
+    "image": "https://images.unsplash.com/photo-1586500036706-41963de24d8b",
+    "tags": ["nature", "relax", "luxury"],
+    "whyThisHotel": "Private backwater views with unmatched peace and privacy.",
+    "description": "Peaceful villa overlooking Kerala backwaters.",
+    "amenities": ["Free WiFi", "Houseboat Access", "Ayurvedic Spa"],
+    "details": {
+      "idealFor": ["Relaxation", "Couples"],
+      "nearby": ["Houseboat Cruise", "Village Walks"]
+    }
+  },
+
+  {
+    "id": 7,
+    "name": "Goa Backpackers Hub",
+    "location": "Goa, India",
+    "lat": 15.2993,
+    "lng": 74.124,
+    "stars": 3.8,
+    "rating": 4.2,
+    "reviewsCount": 2100,
+    "price": 2800,
+    "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+    "tags": ["beach", "budget", "social"],
+    "whyThisHotel": "Best value stay for solo travelers and backpackers.",
+    "description": "Social hostel close to cafes, beaches, and nightlife.",
+    "amenities": ["Free WiFi", "Common Kitchen", "Cafe"],
+    "details": {
+      "idealFor": ["Solo Travelers", "Backpackers"],
+      "nearby": ["Anjuna Beach", "Night Markets"]
+    }
+  },
+  {
+    "id": 8,
+    "name": "Snowfall Homestay",
+    "location": "Manali, India",
+    "lat": 32.2396,
+    "lng": 77.1887,
+    "stars": 4.0,
+    "rating": 4.3,
+    "reviewsCount": 640,
+    "price": 3600,
+    "image": "https://images.unsplash.com/photo-1582719478175-2b2a9c7a3a9f",
+    "tags": ["mountain", "budget", "quiet"],
+    "whyThisHotel": "Cozy and affordable mountain stay with snow views.",
+    "description": "Peaceful homestay surrounded by pine forests.",
+    "amenities": ["Free WiFi", "Heater"],
+    "details": {
+      "idealFor": ["Budget Travelers", "Nature Lovers"],
+      "nearby": ["Old Manali", "Local Trails"]
+    }
+  },
+  {
+    "id": 9,
+    "name": "Green Leaf Eco Stay",
+    "location": "Wayanad, Kerala",
+    "lat": 11.6854,
+    "lng": 76.132,
+    "stars": 4.1,
+    "rating": 4.4,
+    "reviewsCount": 560,
+    "price": 4200,
+    "image": "https://images.unsplash.com/photo-1445019980597-93fa8acb246c",
+    "tags": ["nature", "eco", "budget"],
+    "whyThisHotel": "Eco-friendly retreat surrounded by forests.",
+    "description": "Sustainable stay amidst tea gardens and wildlife.",
+    "amenities": ["Organic Meals", "Nature Walks", "Free WiFi"],
+    "details": {
+      "idealFor": ["Eco Travelers", "Families"],
+      "nearby": ["Tea Estates", "Waterfalls"]
+    }
+  },
+  {
+    "id": 10,
+    "name": "Canggu Surf Stay",
+    "location": "Bali, Indonesia",
+    "lat": -8.6478,
+    "lng": 115.1385,
+    "stars": 4.2,
+    "rating": 4.5,
+    "reviewsCount": 1800,
+    "price": 4800,
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+    "tags": ["beach", "surf", "international"],
+    "whyThisHotel": "Surf-friendly stay near cafes and beaches.",
+    "description": "Trendy stay ideal for surfers and digital nomads.",
+    "amenities": ["Free WiFi", "Surf Rentals", "Pool"],
+    "details": {
+      "idealFor": ["Surfers", "Digital Nomads"],
+      "nearby": ["Echo Beach", "Beach Cafes"]
+    }
+  }
+]

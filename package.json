@@ -1,0 +1,25 @@
+{
+  "name": "travelmind",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Intent-Based Travel Search Prototype",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^1.13.4",
+    "body-parser": "^2.2.2",
+    "dotenv": "^17.2.3",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.19.0",
+    "nodemon": "^3.1.11",
+    "openai": "^6.17.0",
+    "path": "^0.12.7"
+  }
+}

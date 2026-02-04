@@ -1,0 +1,24 @@
+<div class="chat-container">
+  <div class="chat-header">
+    🤖 TravelMind AI
+    <span>Your Smart Travel Copilot</span>
+  </div>
+
+  <div id="chatWindow" class="chat-window">
+    <div class="ai-msg">
+      Hi 👋 I’m TravelMind. Tell me what kind of trip you’re planning.
+    </div>
+  </div>
+
+  <form id="chatForm" action="/search" method="POST" class="chat-input">
+    <input
+      type="text"
+      name="query"
+      id="userInput"
+      placeholder="e.g. 3-day beach trip under ₹40,000"
+      required
+      autocomplete="off"
+    />
+    <button type="submit">➤</button> <button type="button" id="voiceBtn" class="voice-btn">🎙️</button>
+  </form>
+</div>
