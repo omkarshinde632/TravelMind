@@ -22,20 +22,20 @@ router.get("/", (req, res) => {
   res.render("index");
 });
 
-// 🔍 SEARCH (POST + refine + memory-safe)
+//  SEARCH (POST + refine + memory-safe)
 router.all("/search", async (req, res) => {
   try {
     const query =
       (req.method === "POST" ? req.body.query : req.query.q) || "";
 
-    // 🚫 Empty query → go home
+    //  Empty query → go home
     if (!query.trim()) {
       return res.redirect("/");
     }
 
     let rawIntent;
 
-    // 🧠 1️⃣ Extract intent (AI → fallback)
+    //  Extract intent (AI → fallback)
     try {
       rawIntent = await askTravelAI(query);
     } catch (err) {
@@ -43,34 +43,34 @@ router.all("/search", async (req, res) => {
       rawIntent = fallbackIntent(query);
     }
 
-    // 🧠 2️⃣ Normalize intent (CRITICAL FIX)
+    //  Normalize intent (CRITICAL FIX)
     const intent = normalizeIntent(rawIntent, req.session.lastIntent);
 
     // Always safe for EJS
     intent.keywords = intent.keywords || [];
 
-    // 💾 Save intent for refinement
+    //  Save intent for refinement
     req.session.lastIntent = intent;
 
-    // 🧱 3️⃣ Build trips
+    //  Build trips
     const trips = buildTrip(intent);
 
-    // 🏆 4️⃣ Rank trips
+    //  Rank trips
     const rankedTrips = rankTrips(trips, intent);
 
-    // 🧠 5️⃣ Decision fatigue
+    //  Decision fatigue
     const fatigue = calculateDecisionFatigue(rankedTrips);
 
-    // 🎯 6️⃣ Reduce overload + trade-offs
+    //  Reduce overload + trade-offs
     const finalTrips = rankedTrips.slice(0, 3).map(trip => ({
       ...trip,
       tradeOffs: buildTradeOffs(trip)
     }));
 
-    // 🧾 7️⃣ Explain trips
+    //  Explain trips
     explainTrip(finalTrips, intent);
 
-    // 🤖 8️⃣ AI Insight (Gemini → safe fallback)
+    //  AI Insight (Gemini → safe fallback)
     let aiInsight;
     try {
       aiInsight = await getGeminiInsight(intent, finalTrips);
@@ -78,7 +78,7 @@ router.all("/search", async (req, res) => {
       aiInsight = generateAIInsight(intent, finalTrips, fatigue);
     }
 
-    // 🖼 9️⃣ Render results
+    //  Render results
     return res.render("results", {
       intent,
       trips: finalTrips,

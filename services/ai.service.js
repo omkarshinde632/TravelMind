@@ -35,15 +35,15 @@ Required format:
   const result = await model.generateContent(prompt);
   let text = result.response.text();
 
-  // 🔍 LOG RAW OUTPUT (TEMPORARY – VERY IMPORTANT)
+  //  LOG RAW OUTPUT (TEMPORARY – VERY IMPORTANT)
   console.log("RAW GEMINI OUTPUT:\n", text);
 
-  // 🧼 Clean common Gemini formatting
+  //  Clean common Gemini formatting
   text = text.replace(/```json/gi, "")
              .replace(/```/g, "")
              .trim();
 
-  // 🧠 Extract JSON using regex (KEY FIX)
+  // Extract JSON using regex (KEY FIX)
   const jsonMatch = text.match(/\{[\s\S]*\}/);
 
   if (!jsonMatch) {

@@ -1,12 +1,9 @@
 const axios = require("axios");
 
-// NOTE:
-// TBO API is validated but inventory is unreliable in staging.
-// For hackathon stability, we use curated hotels.
+
 
 async function fetchHotels(intent) {
   try {
-    // Validation call (optional, safe)
     await axios.post(
       `${process.env.TBO_BASE_URL}/TBOHolidays_HotelAPI/HotelSearch`,
       {},

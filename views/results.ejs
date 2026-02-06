@@ -1,19 +1,18 @@
 <div class="container my-5">
 
-  <!-- HEADER -->
+  
   <div class="mb-5 text-center">
     <p class="text-muted fs-5">
       AI-inspired Decision Intelligence for Travel
     </p>
   </div>
 
-  <!-- DECISION FATIGUE -->
+  
   <div class="alert alert-warning border-start border-4 shadow-sm">
     <strong>Decision Fatigue:</strong> <%= fatigue.level %><br/>
     <small><%= fatigue.message %></small>
   </div>
 
-  <!-- INTENT -->
   <div class="card mb-4 shadow-sm">
     <div class="card-body">
       <h5 class="card-title mb-3">🧠 Understood Your Intent</h5>
@@ -41,7 +40,7 @@
     </div>
   </div>
 
-  <!-- WHY -->
+  
   <div class="card mb-3 shadow-sm">
     <div class="card-body">
       <h5>Why these results?</h5>
@@ -55,7 +54,6 @@
     </div>
   </div>
 
-  <!-- AI INSIGHT -->
   <div class="card mb-4 shadow-sm bg-light">
     <div class="ai-box card-body">
       <h5>🤖 TravelMind Insight</h5>
@@ -63,7 +61,7 @@
     </div>
   </div>
 
-  <!-- WHAT IF -->
+  
   <div class="card whatif-card mb-5 p-4 text-white shadow">
     <h5 class="mb-2">🔁 Explore Alternate Scenarios</h5>
     <p class="text-light">
@@ -80,7 +78,6 @@
   </div>
 
   <style>
-  /* ===== TRIP CARD IMAGE FIX ===== */
   .trip-image {
     height: 220px;
     width: 100%;
@@ -88,14 +85,13 @@
     border-radius: 14px 14px 0 0;
   }
 
-  /* ===== CARD ===== */
+ 
   .trip-card {
     background: linear-gradient(180deg, #1a1f2e, #141826);
     border-radius: 16px;
     color: #eaeaf0;
   }
 
-  /* ===== COMPARE BADGE ===== */
   .compare-pill {
     position: absolute;
     top: 12px;
@@ -117,7 +113,6 @@
     cursor: pointer;
   }
 
-  /* ===== BEST MATCH ===== */
   .best-match {
     position: absolute;
     top: 12px;
@@ -131,7 +126,7 @@
     z-index: 10;
   }
 
-  /* ===== COMPARE BUTTON ===== */
+ 
   .compare-btn {
     background: linear-gradient(135deg, #2563eb, #1d4ed8);
     color: white;
@@ -150,7 +145,6 @@
 
 <div class="container my-5">
 
-  <!-- HEADER -->
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h3 class="fw-bold text-white">Recommended Trips</h3>
 
@@ -169,8 +163,6 @@
       <div class="col-md-4 mb-4">
 
         <div class="card trip-card h-100 position-relative overflow-hidden">
-
-          <!-- Compare -->
           <div class="compare-pill">
             <input
               type="checkbox"
@@ -181,12 +173,10 @@
             Compare
           </div>
 
-          <!-- Best Match -->
           <% if (index === 0) { %>
             <div class="best-match">Best Match</div>
           <% } %>
 
-          <!-- Image -->
           <img
             src="<%= trip.image %>"
             alt="<%= trip.name %>"
